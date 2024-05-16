@@ -6,9 +6,25 @@
       "sharedGlobals"
     ],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js"
     ],
     "sharedGlobals": []
   },
-  "nxCloudAccessToken": "MmM3OTgxZDQtYmE4MC00YTcwLTg2ZDMtYzEyMjlmNWI2NTYzfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "MmM3OTgxZDQtYmE4MC00YTcwLTg2ZDMtYzEyMjlmNWI2NTYzfHJlYWQtd3JpdGU=",
+  "plugins": [
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ]
 }

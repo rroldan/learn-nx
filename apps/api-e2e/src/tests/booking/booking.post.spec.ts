@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import bookingDetails from '../../test-data/booking-details.json';
+import bookingDetails from '../../data/booking-details.json';
 
 test.describe("booking/ POST requests @booking", async () => {
 

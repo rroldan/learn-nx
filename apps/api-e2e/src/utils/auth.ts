@@ -27,7 +27,7 @@ export async function createCookies(username?: string, password?: string) {
   }
 
   const contextRequest = await request.newContext();
-  const response = await contextRequest.post(url + "auth/login", {
+  const response = await contextRequest.post(url + "/auth", {
     data: {
       username: username,
       password: password,
@@ -53,16 +53,10 @@ export async function createCookies(username?: string, password?: string) {
       data: { token: token },
     });
    */
-export async function createToken(username?: string, password?: string) {
-  if (!username) {
-    username = "admin";
-  }
-  if (!password) {
-    password = "password";
-  }
+export async function createToken(username: string, password: string) {
 
   const contextRequest = await request.newContext();
-  const response = await contextRequest.post(url + "auth/login", {
+  const response = await contextRequest.post(url + "/auth", {
     data: {
       username: username,
       password: password,
@@ -70,8 +64,7 @@ export async function createToken(username?: string, password?: string) {
   });
 
   expect(response.status()).toBe(200);
-  const headers = response.headers();
-  const tokenString = headers["set-cookie"].split(";")[0];
-  const token = tokenString.split("=")[1];
+  const responseBody = await response.json();
+  const token = responseBody.token;
   return token;
 }

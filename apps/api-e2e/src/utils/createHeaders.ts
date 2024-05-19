@@ -18,21 +18,15 @@ const password = config.ADMIN_PASSWORD;
     });
  * 
  */
-export async function createHeaders(token?: string): Promise<RequestHeaders> {
+export async function createHeaders(token: string): Promise<RequestHeaders> {
   let requestHeaders: RequestHeaders;
 
   if (token) {
     requestHeaders = {
       cookie: `token=${token}`,
     };
-  } else {
-    // Authenticate and get cookies
-    const cookies = await createCookies(username, password);
-    requestHeaders = {
-      cookie: cookies,
-    };
   }
-
+  
   return requestHeaders;
 }
 

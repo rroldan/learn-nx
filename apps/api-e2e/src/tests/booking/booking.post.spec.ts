@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 import bookingDetails from '../../data/booking-details.json';
 
-test.describe("booking/ POST requests @booking", async () => {
+test.describe('booking/ POST requests @booking', async () => {
 
 test('should be able to create a booking', async ({ request }) => {
     const response = await request.post(`/booking`, {

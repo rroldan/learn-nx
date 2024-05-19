@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { config } from '../../../src/support/config';
 
-test.describe("auth/login POST requests @auth", async () => {
+test.describe('auth/login POST requests @auth', async () => {
     const username = config.ADMIN_NAME;
     const password = config.ADMIN_PASSWORD;
   
-    test("POST with valid credentials @happy", async ({ request }) => {
+    test('POST with valid credentials', async ({ request }) => {
       // Calculating Duration
       const start = Date.now();
       

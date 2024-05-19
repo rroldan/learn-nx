@@ -45,7 +45,7 @@ export async function createCookies(username?: string, password?: string) {
    * If a username and password aren't provided "admin" and "password" will be used
    *
    * @example
-   * import { createToken } from "../datafactory/auth";
+   * import { createToken } from "../util/auth";
    *  
    * const token = createToken("Happy", "Mcpassword")
    * 

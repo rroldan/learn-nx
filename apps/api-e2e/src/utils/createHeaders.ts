@@ -10,7 +10,7 @@ const password = config.ADMIN_PASSWORD;
  * @returns a header object with the token set as a cookie
  * 
  * @example 
- * import { createHeaders } from "../lib/helpers/createHeaders";
+ * import { createHeaders } from "../utils/createHeaders";
  * 
  * const headers = await createHeaders(token);
  *     const response = await request.delete(`booking/${bookingId}`, {
@@ -41,7 +41,7 @@ export async function createHeaders(token?: string): Promise<RequestHeaders> {
  * @returns a header object with an invalid cookie used to test negative scenarios
  * 
  * @example 
- * import { createInvalidHeaders } from "../lib/helpers/createHeaders";
+ * import { createInvalidHeaders } from "../utils/createHeaders";
  * 
  * const invalidHeader = await createInvalidHeaders();
  *     const response = await request.delete(`booking/${bookingId}`, {

@@ -15,10 +15,6 @@ test.describe('booking/{id} PUT requests @booking', async () => {
         headers = await createHeaders(token);
       
       });
-    test.beforeEach(async () => {
-      
-
-    });
   
     test('`PUT booking with specific id', async ({ request }) => {
     

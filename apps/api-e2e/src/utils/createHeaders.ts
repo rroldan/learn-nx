@@ -1,9 +1,3 @@
-import { createCookies } from "./auth";
-import { config } from '../support/config';
-
-const username = config.ADMIN_NAME;
-const password = config.ADMIN_PASSWORD;
-
 /**
  * 
  * @param token a valid token to be used in the request if one is not provided cookies will be created from default username and password

@@ -16,16 +16,17 @@ test('should be able to create a booking', async ({ request }) => {
         data: bookingDetails
     });
     const responseBody = await response.json()
-    bookingId = responseBody.bookingId;
+    bookingId = responseBody.bookingid;
 
     expect(response.ok()).toBeTruthy();
     expect(response.status()).toBe(200);
+
     expect(responseBody.booking).toHaveProperty("firstname", "Alex");
     expect(responseBody.booking).toHaveProperty("lastname", "Lee");
     expect(responseBody.booking).toHaveProperty("totalprice", 2000);
     expect(responseBody.booking).toHaveProperty("depositpaid", true);
     
-    await test.step('remove booking', async () => {
+    await test.step('delete booking', async () => {
         token = await createToken(username, password);
         headers = await createHeaders(token);
         
@@ -33,8 +34,8 @@ test('should be able to create a booking', async ({ request }) => {
           headers: headers,
         });
         
-        expect(response.ok()).toBeTruthy();
-        expect(response.status()).toBe(200);
+        expect(deleteRequest.status()).toEqual(201);
+        expect(deleteRequest.statusText()).toBe('Created');
 
     });
     });

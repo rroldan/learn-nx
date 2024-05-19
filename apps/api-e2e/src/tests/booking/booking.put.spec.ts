@@ -24,10 +24,11 @@ test.describe('booking/{id} PUT requests @booking', async () => {
        
     });
   
-    console.log(await updateRequest.json());
+    const updatedResponseBody = await updateRequest.json()
+   
     expect(updateRequest.ok()).toBeTruthy();
     expect(updateRequest.status()).toBe(200);
-    const updatedResponseBody = await updateRequest.json()
+    
     expect(updatedResponseBody).toHaveProperty("firstname", "Alex");
     expect(updatedResponseBody).toHaveProperty("lastname", "Lee");
     expect(updatedResponseBody).toHaveProperty("totalprice", 2000);

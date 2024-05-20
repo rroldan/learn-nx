@@ -16,7 +16,7 @@ test.describe('booking/{id} PUT requests @booking', async () => {
       
       });
   
-    test('`PUT booking with specific id', async ({ request }) => {
+    test('PUT booking with specific id', async ({ request }) => {
     
       const updateRequest = await request.put(`/booking/1`, {
         headers: headers,

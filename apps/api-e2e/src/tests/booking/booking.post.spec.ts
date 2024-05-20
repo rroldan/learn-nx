@@ -11,7 +11,7 @@ test.describe('booking/ POST requests @booking', async () => {
     let bookingId;
     let headers;
 
-test('should be able to create a booking', async ({ request }) => {
+test('POST new booking with full body', async ({ request }) => {
     const response = await request.post(`/booking`, {
         data: bookingDetails
     });
